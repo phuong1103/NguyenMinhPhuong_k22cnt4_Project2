@@ -1,0 +1,128 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="@Url.Content("~/Scripts/JavaScript.js")" )></script>
+    <link href="~/Content/Home/Site.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/Home/css/style.css">
+    <script src="~/Content/Home/js/main.js"></script>
+    <title>ColorkeyWeb-Nguyễn Minh Phương</title>
+    <link rel="shortcut icon" href="~/Content/img/icon c.png">
+</head>
+
+<body>
+    <header>
+        <img src="@Url.Content("~/Content/img/anh1.gif")" alt="" width="1250" height="50" />
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/Home/NmpIndex"><img src="@Url.Content("~/Content/img/logo3.png")"></a></li>
+                <li id="adress-form"><a href="#">Hà Nội<i class="fas fa-sort-down"></i></a></li>
+                <li><input type="text" placeholder="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><a href="/Admin/ShoppingCart/Index"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a></li>
+                <li> @Html.ActionLink("Thông tin", "NmpAbout", "Home")</a></li>
+                <li>
+                    <i class="fa-regular fa-id-card"></i>
+                    @Html.ActionLink("Tài khoản", "Login", "Account")
+                </li>
+                <li><a style="margin-right: 30px;" @Html.ActionLink("Liên hệ", "NmpContact", "Home")</a></li>
+                <div class="adress-form">
+                    <div class="adress-form-content">
+                        <h2>Chọn địa chỉ nhận hàng<span id="adress-close">X Đóng</span></h2>
+                        <form action="@Url.Action("SubmitAddress", "Home")" method="post">
+                            <p>Chọn đầy đủ địa chỉ nhận hàng và thời gian nhận</p>
+                            <select name="Location" required>
+                                <option value="">--Chọn địa điểm</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                            </select>
+                            <select name="District" required>
+                                <option value="">--Chọn Quận/Huyện</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                            </select>
+                            <select name="Ward" required>
+                                <option value="">--Chọn Phường/Xã</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                            </select>
+                            <input type="text" name="Address" placeholder="Số nhà, tên đường" required>
+                            <button type="submit">Xác nhận</button>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+    </div>
+    </nav>
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-content">
+                <ul>
+                    <li><a href="">BEST SELLER</a></li>
+                    <li><a href="">MỚI</a></li>
+                    <li><a href="">NỔI BẬT</a></li>
+                    <li><a href="">BÁN CHẠY</a></li>
+                    <li><a href="">KẺ MẮT</a></li>
+                    <li><a href="">PHẤN PHỦ</a></li>
+                    <li>
+                        <a href="">SON <i class="fas fa-sort-down"></i></a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Son Bóng</a></li>
+                                <li><a href="">Son Lỳ</a></li>
+                                <li><a href="">Son Dưỡng</a></li>
+                                <li><a href="">Son Kem</a></li>
+                                <li><a href="">Son Thỏi/Son Sáp</a></li>
+                                <li><a href="">Son Nước</a></li>
+                                <li><a href="">Son Tint</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="https://www.facebook.com/colorkeyvietnam" style="margin-right: 50px;">BLOGS</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <!-- Slider -->
+    @RenderBody()
+    <footer class="footer">
+        <div class="container2">
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <p>Địa chỉ: 24 Phan đình Giót, La khê, Hà Đông, Hà Nội</p>
+                <p>Điện thoại: <a href="tel:0348124474">0348124474</a></p>
+                <p>Email: <a href="mailto:nminhphuong685@gmail.com">nminhphuong685@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Thông Tin</h3>
+                <ul>
+                    <li><a href="#gioithieu">Giới thiệu</a></li>
+                    <li><a href="#sanpham">Sản phẩm</a></li>
+                    <li><a href="#trangchu">Trang chủ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Mạng Xã Hội</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ngphunn?mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/?lang=vi" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.apple.com/vn/apple-pay/" aria-label="Applepay"><i class="fab fa-cc-apple-pay"></i></a>
+                    <a href="https://github.com/phuong1103" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h2>&copy; 2024 Nguyễn Minh Phương.</h2>
+        </div>
+    </footer>
+</body>
+
+
+</html>
